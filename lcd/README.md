@@ -14,6 +14,8 @@ Vous avez besoin des paquets GPIO du Raspberry pi et de quelques autres outils :
 
 `sudo pip install rpi.gpio`
 
+`sudo pip install psutil`
+
 
 Librairie Adafruit LCD :
 
