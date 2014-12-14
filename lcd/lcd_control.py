@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# Auteur : knonn
+# Utilitaire pour l'allumage ou l'extinction d'un LCD 16x2 branché au Raspberry Pi B+ via un module relai
 import RPi.GPIO as GPIO
 
 GPIO.setwarnings(False)
