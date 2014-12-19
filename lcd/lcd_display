@@ -65,7 +65,27 @@ def main():
     lcd_byte(LCD_LINE_1, LCD_CMD)
     lcd_string(datetime.now().strftime("%d %b     %H:%M"))
     lcd_byte(LCD_LINE_2, LCD_CMD)
-    lcd_string('IP .%s' '   %s' % (ipaddr[:-1],cpu))
+    if cpu < 10:
+        cpu = 0
+    elif cpu > 10 and cpu < 20:
+        cpu = 20
+    elif cpu > 20 and cpu < 30:
+        cpu = 30
+    elif cpu > 30 and cpu < 40:
+        cpu = 40
+    elif cpu > 40 and cpu < 50:
+        cpu = 50
+    elif cpu > 50 and cpu < 60:
+        cpu = 60
+    elif cpu > 60 and cpu < 70:
+        cpu = 70
+    elif cpu > 70 and cpu < 80:
+        cpu = 80
+    elif cpu > 80 and cpu < 90:
+        cpu = 90
+    elif cpu > 90:
+        cpu = 100
+    lcd_string('IP .%s' '  CPU: %s' % (ipaddr[:-1],cpu))
     time.sleep(20)
 
 # Init de l'affichage 
