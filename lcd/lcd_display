@@ -17,7 +17,7 @@ LCD_D5 = 24
 LCD_D6 = 23
 LCD_D7 = 18
  
-# Definition caractéristiques
+# Definition caracteristiques
 LCD_WIDTH = 16    # Maximum characters per line
 LCD_CHR = True
 LCD_CMD = False
@@ -44,7 +44,7 @@ def main():
  
   # Declaration variable
 
-  # Afficher IP complète
+  # Afficher IP complete
   #cmd = "ip addr show eth0 | grep inet | awk '{print $2}' | cut -d/ -f1"
 
   # Afficher 2 derniers char IP
@@ -60,7 +60,7 @@ def main():
 
   while 1:
     # Definition % CPU
-    cpu = psutil.cpu_percent(interval=None, percpu=True)
+    cpu = psutil.cpu_percent(interval=None)
     # Send msg
     lcd_byte(LCD_LINE_1, LCD_CMD)
     lcd_string(datetime.now().strftime("%d %b     %H:%M"))
