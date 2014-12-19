@@ -5,6 +5,9 @@ from time import sleep, strftime
 from datetime import datetime
 from subprocess import *
 import psutil
+
+# Supprimer messages warnings
+GPIO.setwarnings(False)
  
 # Definition des ports GPIO
 LCD_RS = 7
