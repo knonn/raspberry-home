@@ -86,7 +86,7 @@ def main():
     elif cpu > 90:
         cpu = 100
     lcd_string('IP .%s' '  CPU: %s' % (ipaddr[:-1],cpu))
-    time.sleep(20)
+    time.sleep(1)
 
 # Init de l'affichage 
 def lcd_init():
