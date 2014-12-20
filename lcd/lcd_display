@@ -58,6 +58,8 @@ def main():
 
   ipaddr = run_cmd(cmd)
 
+  lcd = 0xCD
+
   while 1:
     # Definition % CPU
     cpu = psutil.cpu_percent(interval=None)
@@ -65,27 +67,49 @@ def main():
     lcd_byte(LCD_LINE_1, LCD_CMD)
     lcd_string(datetime.now().strftime("%d %b     %H:%M"))
     lcd_byte(LCD_LINE_2, LCD_CMD)
+    lcd_string('IP .%s   CPU' % ipaddr[:-1])
+    lcd_byte(lcd, LCD_CMD)
+    # Reglages CPU
     if cpu < 10:
         cpu = 0
+	lcd_byte(0xCF, LCD_CMD)
+	lcd_string('%s' % cpu)
     elif cpu > 10 and cpu < 20:
         cpu = 20
+	lcd_byte(0xCE, LCD_CMD)
+        lcd_string('%s' % cpu)
     elif cpu > 20 and cpu < 30:
         cpu = 30
+	lcd_byte(0xCE, LCD_CMD)
+        lcd_string('%s' % cpu)
     elif cpu > 30 and cpu < 40:
         cpu = 40
+	lcd_byte(0xCE, LCD_CMD)
+        lcd_string('%s' % cpu)
     elif cpu > 40 and cpu < 50:
         cpu = 50
+	lcd_byte(0xCE, LCD_CMD)
+        lcd_string('%s' % cpu)
     elif cpu > 50 and cpu < 60:
         cpu = 60
+	lcd_byte(0xCE, LCD_CMD)
+        lcd_string('%s' % cpu)
     elif cpu > 60 and cpu < 70:
         cpu = 70
+	lcd_byte(0xCE, LCD_CMD)
+        lcd_string('%s' % cpu)
     elif cpu > 70 and cpu < 80:
         cpu = 80
+	lcd_byte(0xCE, LCD_CMD)	
+        lcd_string('%s' % cpu)
     elif cpu > 80 and cpu < 90:
         cpu = 90
+	lcd_byte(0xCE, LCD_CMD)
+        lcd_string('%s' % cpu)
     elif cpu > 90:
         cpu = 100
-    lcd_string('IP .%s' '  CPU: %s' % (ipaddr[:-1],cpu))
+	lcd_byte(0xCD, LCD_CMD)
+        lcd_string('%s' % cpu)
     time.sleep(1)
 
 # Init de l'affichage 
