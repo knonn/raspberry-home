@@ -7,7 +7,7 @@ import subprocess
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 
-a = raw_input("Quel pin GPIO voulez vous controler ? (Entrer le numéro du pin)")
+a = raw_input("Quel pin GPIO voulez vous controler ? (Entrer le numero du pin)")
 a = int(a)
 
 c = raw_input("Choisissez le mode\n \t1. IN\n \t2. OUT\nChoice number : ")
